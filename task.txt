@@ -26,4 +26,6 @@ For the first two questions check on https://github.com/J0s3M4rqu3z/inkitt_test 
 
 6.- The last question was very interesting, it was how can we extract a location from a text. For this we need Natural Language processing and the NLTK is very usefull. First we need tokenize the Teaser, second we need to make the words taggin, this minds that we need to put a tag for all the kinds for all the words, NLTK can do it for us, next we need to make chunk this can help us to understand the words structures likes trees etc, and after that for geographical location we have the chunk label that tells us what kind of structure is (we have GPE for geo-political entities), and with this we can have the information we need. 
 
+The code is on geographical_location.py on the same git hub repository
+
 Please Any comment just let me know.

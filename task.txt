@@ -1,0 +1,29 @@
+You can send the code in any way you would consider appropriate.
+Throughout the process, please write down and keep your questions regarding this task.
+Do you have any comments on the data/results?
+
+1. write an SQL query that sums up reading for horror readers by day.
+- how much did they read?
+- how many readers are there?
+- what country are the readers from?
+2. write the same query in Python and possibly with Pandas or Numpy; or write it in R if you feel more comfortable.
+3. the Stories table contains a field called 'Teaser'. How would you extract geographic location from this?
+
+
+Comments about the wich
+
+1.- I had to guess that the data has a good relationship between the tables but there was a problem with the visits data and the other 2. The visitors Ids on the visits table doesn't match to the visitor id on the reading. For that reason when the queries are triying to make the match between them it comes empty.
+
+2.- There was not obviusly to know that the user_id has nothing to do with the problem because the very important id was the visitor id. There was a lot of instances that has null the user_id, so i guess that is not really important or there's the need to make a clean up of data before making any data minning process on it.
+
+3.- For the first question use two approaches, since I did not know if it was required to count how many times the reader entered the book or how much time the reader spent reading it, finally I decided to do both. In the first I made a grouping by Visitor_id and date to have how many times each visitor entered, and in the second it added the time they spent on the platform, assuming that the two dates provided were the data for that calculation, however it seems that times obtained is not so, however leave the code in function of simply changing the variables in case you have the necessary data
+
+4.- To know how many readers there were per day, I used the same method as before but the group did not do it by visitor, only by date but counting only 1 time each visitor, with that we can know how many visitors we had in a day.
+
+5.- About the countries, we grouped by date and country using the identification of the visitor as bridget between the reading and the tables of visits.
+
+For the first two questions check on https://github.com/J0s3M4rqu3z/inkitt_test sql_queries.sql and python_queries.py
+
+6.- The last question was very interesting, it was how can we extract a location from a text. For this we need Natural Language processing and the NLTK is very usefull. First we need tokenize the Teaser, second we need to make the words taggin, this minds that we need to put a tag for all the kinds for all the words, NLTK can do it for us, next we need to make chunk this can help us to understand the words structures likes trees etc, and after that for geographical location we have the chunk label that tells us what kind of structure is (we have GPE for geo-political entities), and with this we can have the information we need. 
+
+Please Any comment just let me know.

@@ -22,13 +22,10 @@ left join visits on visits.visitor_id = reading.visitor_id
 where concat(category_one,' ',category_two) regexp 'horror'
 group by date(created_at);
 
-#what country are the readers from?, i didn't put the date on the filter because
-#the country of the visitor will not change so its unrelevant
-#and i understant that the question was to read it 
-
-SELECT country, reading.visitor_id
+#what country are the readers from? Understading that we cant to know from where were the readers on one day
+SELECT country, date(created_at) as read_day
 FROM reading
 left join stories on reading.story_id = stories.id 
 left join visits on visits.visitor_id = reading.visitor_id
 where concat(category_one,' ',category_two) regexp 'horror'
-group by (reading.visitor_id);
+group by date(created_at),country;

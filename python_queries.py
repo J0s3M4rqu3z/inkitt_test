@@ -38,7 +38,7 @@ print(reading_s_reader_day)
 
 reading_s_countries = pd.merge(reading_s,visits,how='left', on = ['visitor_id'])
 reading_s_countries.loc[pd.isnull(reading_s_countries['country']),'country'] = "Null"
-reading_s_countries = reading_s_countries.groupby(["visitor_id","country"], ).aggregate({
+reading_s_countries = reading_s_countries.groupby(["date","country"], ).aggregate({
        'visitor_id': 'count',
     }).rename(columns={'visitor_id': 'readers'})
 reading_s_countries.reset_index(inplace=True)

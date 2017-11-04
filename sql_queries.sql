@@ -22,7 +22,7 @@ left join visits on visits.visitor_id = reading.visitor_id
 where concat(category_one,' ',category_two) regexp 'horror'
 group by date(created_at);
 
-#what country are the readers from? Understading that we cant to know from where were the readers on one day
+#what country are the readers from? Understading that we want to know from where the readers are on one day
 SELECT country, date(created_at) as read_day
 FROM reading
 left join stories on reading.story_id = stories.id 
